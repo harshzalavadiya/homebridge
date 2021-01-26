@@ -1,0 +1,63 @@
+{
+  "bridge": {
+    "name": "Homebridge",
+    "username": "CC:22:3D:E3:CE:30",
+    "port": 51826,
+    "pin": "031-45-154"
+  },
+  "description": "homebridge config for home",
+  "accessories": [],
+  "platforms": [
+    {
+      "name": "Config",
+      "port": 8080,
+      "auth": "form",
+      "theme": "auto",
+      "tempUnits": "c",
+      "lang": "auto",
+      "sudo": false,
+      "platform": "config"
+    },
+    {
+      "platform": "SamsungTizen",
+      "app_list": false,
+      "devices": [
+        {
+          "name": "Bedroom TV",
+          "ip": "192.168.1.102",
+          "mac": "fc:dd:55:98:22:9c",
+          "switches": [
+            {
+              "name": "Mute",
+              "mute": true
+            },
+            {
+              "name": "Unmute",
+              "mute": true
+            },
+            {
+              "name": "Increase Volume",
+              "command": "KEY_VOLUP*10"
+            },
+            {
+              "name": "Decrease Volume",
+              "command": "KEY_VOLDOWN*10"
+            }
+          ],
+          "inputs": [
+            {
+              "name": "Netflix",
+              "type": "app",
+              "value": "11101200001"
+            },
+            {
+              "name": "YouTube",
+              "type": "app",
+              "value": "111299001912"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
